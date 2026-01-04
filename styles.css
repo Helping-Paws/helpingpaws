@@ -642,3 +642,40 @@ input:focus, textarea:focus{
   .nav-menu a:hover{ background: rgba(17,24,39,0.06); text-decoration: none; }
   .nav-cta{ margin-left: 0; }
 }
+
+/* ===== Request a Device: card box fix ===== */
+
+/* If your request section has id="request" */
+#request .grid-2 {
+  align-items: start;
+}
+
+/* Make the two cards match the Mission card feel */
+#request .card {
+  width: 100%;
+  max-width: 520px;                 /* key: prevents super-wide cards */
+  margin: 0 auto;                   /* centers each card in its column */
+  padding: 22px 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.08);
+  background: #fff;
+}
+
+/* Fix headings looking too close to the border */
+#request .card h3,
+#request .card h4 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+/* Tighten list spacing so it looks intentional */
+#request .bullets,
+#request .steps {
+  margin-top: 12px;
+}
+
+#request .bullets li,
+#request .steps li {
+  line-height: 1.35;
+}
