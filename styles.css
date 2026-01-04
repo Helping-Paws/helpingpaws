@@ -679,3 +679,36 @@ input:focus, textarea:focus{
 #request .steps li {
   line-height: 1.35;
 }
+
+/* ===============================
+   Request a Device – Card Fix
+   =============================== */
+
+/* Target any cards inside the Request a Device section */
+.section .card {
+  max-width: 720px;          /* stops the stretched look */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tighten padding so headers don’t look clipped */
+.section .card {
+  padding: 22px 26px;
+}
+
+/* Fix headings touching borders */
+.section .card h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+/* Lists inside request cards */
+.section .bullets,
+.section .steps {
+  margin-top: 12px;
+}
+
+.section .bullets li,
+.section .steps li {
+  line-height: 1.35;
+}
