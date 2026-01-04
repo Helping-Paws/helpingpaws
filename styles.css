@@ -234,30 +234,38 @@ a:hover{ text-decoration: underline; }
   font-size: 16px;
 }
 
+/* Grids (missing before) */
+.grid{
+  display: grid;
+  gap: 18px;
+}
+.grid-2{ grid-template-columns: repeat(2, 1fr); }
+.grid-3{ grid-template-columns: repeat(3, 1fr); }
+
 /* Layout helpers */
 .split{
   display: grid;
   grid-template-columns: 1.2fr 0.9fr;
   gap: 26px;
-  align-items: start; /* keep both columns aligned at top */
+  align-items: start;
   margin-top: 26px;
 }
 .split-left p{ color: rgba(17,24,39,0.78); font-size: 16px; }
 .split-left p + p{ margin-top: 14px; }
 
-/* === Mission card fix (implemented) === */
+/* Mission card fix */
 .split-right{
   display: flex;
-  justify-content: flex-end; /* prevents the card from feeling stretched */
+  justify-content: flex-end;
 }
 .split-right .card{
   width: 100%;
-  max-width: 520px;          /* key: stops it from being huge */
-  margin-top: 12px;          /* aligns with first paragraph line */
+  max-width: 520px;
+  margin-top: 12px;
   padding: 22px 24px;
   border-radius: 18px;
   border: 1px solid rgba(17, 24, 39, 0.12);
-  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.08); /* softer */
+  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.08);
   background: #fff;
 }
 
@@ -287,9 +295,7 @@ a:hover{ text-decoration: underline; }
   display: grid;
   gap: 12px;
 }
-.bullets li{
-  line-height: 1.35; /* tightens the list */
-}
+.bullets li{ line-height: 1.35; }
 .dot{
   width: 10px; height: 10px;
   border-radius: 999px;
@@ -391,10 +397,12 @@ a:hover{ text-decoration: underline; }
 .donate-card h3{ margin: 0 0 8px; font-size: 20px; }
 .donate-card p{ margin: 0 0 14px; }
 
+/* FIX 1: prevent badge overlapping "Fund a Device" */
 .donate-featured{
   border: 2px solid rgba(47,128,237,0.55);
   box-shadow: 0 16px 40px rgba(47,128,237,0.12);
   position: relative;
+  padding-top: 56px; /* space reserved for the badge */
 }
 .badge{
   position: absolute;
@@ -615,7 +623,6 @@ input:focus, textarea:focus{
   .story-duo{ grid-template-columns: 1fr; }
   .story-media{ min-height: 260px; }
 
-  /* On mobile, don't push the mission card to the far right */
   .split-right{ justify-content: stretch; }
   .split-right .card{ max-width: 100%; margin-top: 0; }
 }
@@ -641,74 +648,4 @@ input:focus, textarea:focus{
   .nav-menu a{ padding: 10px 10px; border-radius: 14px; }
   .nav-menu a:hover{ background: rgba(17,24,39,0.06); text-decoration: none; }
   .nav-cta{ margin-left: 0; }
-}
-
-/* ===== Request a Device: card box fix ===== */
-
-/* If your request section has id="request" */
-#request .grid-2 {
-  align-items: start;
-}
-
-/* Make the two cards match the Mission card feel */
-#request .card {
-  width: 100%;
-  max-width: 520px;                 /* key: prevents super-wide cards */
-  margin: 0 auto;                   /* centers each card in its column */
-  padding: 22px 24px;
-  border-radius: 18px;
-  border: 1px solid rgba(17, 24, 39, 0.12);
-  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.08);
-  background: #fff;
-}
-
-/* Fix headings looking too close to the border */
-#request .card h3,
-#request .card h4 {
-  margin-top: 0;
-  margin-bottom: 14px;
-}
-
-/* Tighten list spacing so it looks intentional */
-#request .bullets,
-#request .steps {
-  margin-top: 12px;
-}
-
-#request .bullets li,
-#request .steps li {
-  line-height: 1.35;
-}
-
-/* ===============================
-   Request a Device – Card Fix
-   =============================== */
-
-/* Target any cards inside the Request a Device section */
-.section .card {
-  max-width: 720px;          /* stops the stretched look */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Tighten padding so headers don’t look clipped */
-.section .card {
-  padding: 22px 26px;
-}
-
-/* Fix headings touching borders */
-.section .card h3 {
-  margin-top: 0;
-  margin-bottom: 14px;
-}
-
-/* Lists inside request cards */
-.section .bullets,
-.section .steps {
-  margin-top: 12px;
-}
-
-.section .bullets li,
-.section .steps li {
-  line-height: 1.35;
 }
