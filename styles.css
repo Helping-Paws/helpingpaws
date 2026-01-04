@@ -239,19 +239,29 @@ a:hover{ text-decoration: underline; }
   display: grid;
   grid-template-columns: 1.2fr 0.9fr;
   gap: 26px;
-  align-items: start;
+  align-items: start; /* keep both columns aligned at top */
   margin-top: 26px;
 }
 .split-left p{ color: rgba(17,24,39,0.78); font-size: 16px; }
 .split-left p + p{ margin-top: 14px; }
 
-.grid{
-  display: grid;
-  gap: 18px;
+/* === Mission card fix (implemented) === */
+.split-right{
+  display: flex;
+  justify-content: flex-end; /* prevents the card from feeling stretched */
 }
-.grid-3{ grid-template-columns: repeat(3, 1fr); }
-.grid-2{ grid-template-columns: repeat(2, 1fr); }
+.split-right .card{
+  width: 100%;
+  max-width: 520px;          /* key: stops it from being huge */
+  margin-top: 12px;          /* aligns with first paragraph line */
+  padding: 22px 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.08); /* softer */
+  background: #fff;
+}
 
+/* Cards */
 .card{
   background: #fff;
   border: 1px solid rgba(17,24,39,0.10);
@@ -276,6 +286,9 @@ a:hover{ text-decoration: underline; }
   margin: 14px 0 0;
   display: grid;
   gap: 12px;
+}
+.bullets li{
+  line-height: 1.35; /* tightens the list */
 }
 .dot{
   width: 10px; height: 10px;
@@ -601,6 +614,10 @@ input:focus, textarea:focus{
   .story-feature,
   .story-duo{ grid-template-columns: 1fr; }
   .story-media{ min-height: 260px; }
+
+  /* On mobile, don't push the mission card to the far right */
+  .split-right{ justify-content: stretch; }
+  .split-right .card{ max-width: 100%; margin-top: 0; }
 }
 
 @media (max-width: 860px){
